@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `GolfTävling`.`Jacka` (
   `Material` VARCHAR(45) NULL,
   `Spelare_PersonNr` VARCHAR(13) NOT NULL,
   `Initialer` VARCHAR(3) NOT NULL,
+  PRIMARY KEY(`Spelare_PersonNr`,`Initialer`),
   INDEX `fk_Jacka_Spelare1_idx` (`Spelare_PersonNr` ASC) INVISIBLE,
   UNIQUE INDEX `idJacka_UNIQUE` (`idJacka` ASC) VISIBLE,
   CONSTRAINT `fk_Jacka_Spelare`
@@ -131,6 +132,7 @@ CREATE TABLE IF NOT EXISTS `GolfTävling`.`Klubba` (
   `Nr` INT NOT NULL AUTO_INCREMENT,
   `Spelare_PersonNr` VARCHAR(13) NOT NULL,
   `Konstruktion_SerialNR` INT NOT NULL,
+  PRIMARY KEY (`Spelare_PersonNr`,`Konstruktion_SerialNR`),
   INDEX `fk_Klubba_Spelare1_idx` (`Spelare_PersonNr` ASC) VISIBLE,
   INDEX `fk_Klubba_Konstruktion1_idx` (`Konstruktion_SerialNR` ASC) VISIBLE,
   UNIQUE INDEX `Nr_UNIQUE` (`Nr` ASC) VISIBLE,
